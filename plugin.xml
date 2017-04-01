@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="xyz.sheyar" version="0.7.0">
+
+  <name>Voice-command</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/voice-command.js" target="js/voice-command.js"/>
+
+  <js-module src="www/voice-command.js" name="voice-command">
+    <clobbers target="voice-command" />
+  </js-module>
+
+  <!-- android configuration -->
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="VoiceCommand">
+        <param name="android-package" value="xyz.sheyar.plugin.VoiceCommand"/>
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="application/activity/">
+      <intent-filter>
+        <action android:name="android.media.action.IMAGE_CAPTURE" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.VOICE" />
+      </intent-filter>
+      <intent-filter>
+          <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.VOICE" />
+      </intent-filter>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.CAMERA" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </config-file>
+
+    <source-file src="src/android/VoiceCommand.java" target-dir="src/xyz/sheyar/plugin"/>
+  </platform>
+
+</plugin>
