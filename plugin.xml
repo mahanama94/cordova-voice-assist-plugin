@@ -10,7 +10,7 @@
   <asset src="www/voice-command.js" target="js/voice-command.js"/>
 
   <js-module src="www/voice-command.js" name="voice-command">
-    <clobbers target="voice-command" />
+    <clobbers target="voicecommand" />
   </js-module>
 
   <!-- android configuration -->

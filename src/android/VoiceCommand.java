@@ -9,10 +9,10 @@ public class VoiceCommand extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals("greet")) {
+        if (action.equals("test")) {
 
             String name = data.getString(0);
-            String message = "Hello Some other, " + name;
+            String message = "Testing from the voice plugin, " + name;
 
             callbackContext.success(message);
 
