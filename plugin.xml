@@ -42,6 +42,7 @@
     <source-file src="src/android/VoiceActivity.java" target-dir="src/xyz/sheyar/plugin"/>
     <source-file src="src/android/VoiceAction.java" target-dir="src/xyz/sheyar/plugin"/>
     <source-file src="src/android/SetalarmVoiceEvent.java" target-dir="src/xyz/sheyar/plugin"/>
+    <source-file src="src/android/VoiceActionFactory.java" target-dir="src/xyz/sheyar/plugin"/>
   </platform>
 
 </plugin>
