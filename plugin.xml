@@ -23,25 +23,25 @@
       </feature>
     </config-file>
 
-    <config-file target="AndroidManifest.xml" parent="application/activity/">
-      <intent-filter>
-        <action android:name="android.media.action.IMAGE_CAPTURE" />
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.VOICE" />
-      </intent-filter>
-      <intent-filter>
-          <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
-          <category android:name="android.intent.category.DEFAULT" />
-          <category android:name="android.intent.category.VOICE" />
-      </intent-filter>
+    <config-file target="AndroidManifest.xml" parent="application/">
+      <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:label="@string/activity_name" android:launchMode="singleTop" android:name="xyz.sheyar.plugin.VoiceActivity" android:theme="@android:style/Theme.DeviceDefault.NoActionBar" android:windowSoftInputMode="adjustResize">
+          <intent-filter>
+              <action android:name="android.intent.action.SET_ALARM" />
+              <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
+      </activity>
     </config-file>
 
     <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
       <uses-permission android:name="android.permission.CAMERA" />
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     </config-file>
 
     <source-file src="src/android/VoiceCommand.java" target-dir="src/xyz/sheyar/plugin"/>
+    <source-file src="src/android/VoiceActivity.java" target-dir="src/xyz/sheyar/plugin"/>
+    <source-file src="src/android/VoiceAction.java" target-dir="src/xyz/sheyar/plugin"/>
+    <source-file src="src/android/SetalarmVoiceEvent.java" target-dir="src/xyz/sheyar/plugin"/>
   </platform>
 
 </plugin>
