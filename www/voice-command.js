@@ -2,7 +2,7 @@
 
 module.exports = {
 
-  test : function(name, success, error){
-    cordova.exec(success, error, "VoiceCommand", "test", [name]);
+  check : function(params, success, error){
+    cordova.exec(success, error, "VoiceCommand", "check", [params]);
   }
 };
