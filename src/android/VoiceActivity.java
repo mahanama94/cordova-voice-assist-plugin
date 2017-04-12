@@ -3,11 +3,16 @@ package xyz.sheyar.plugin;
 import android.os.Bundle;
 
 import org.apache.cordova.CordovaActivity;
+import org.json.JSONException;
+
+import android.util.Log;
 import android.widget.Toast;
 /**
  * Created by bhanuka on 4/1/17.
  */
 public class VoiceActivity extends CordovaActivity {
+
+    private static String TAG = "VoiceActivity";
 
     public void onCreate(Bundle savedInstance){
 
@@ -23,13 +28,14 @@ public class VoiceActivity extends CordovaActivity {
 
         VoiceCommand plugin = (VoiceCommand)this.appView.getPluginManager().getPlugin("VoiceCommand");
 
-        plugin.init(new SetalarmVoiceEvent());
+        try {
+            plugin.init(getIntent());
+        } catch (JSONException e) {
+            Log.e(TAG, "JSON Exception");
+            e.printStackTrace();
+        }
 
         Toast.makeText(this.getApplicationContext(), "Setting info", 2000).show();
-
-//        this.appView.getPluginManager().getPlugin("VoiceCommmand").execute("ACtion");
-//
-//        this.appView.postMessage("some", "Another");
 
 
     }

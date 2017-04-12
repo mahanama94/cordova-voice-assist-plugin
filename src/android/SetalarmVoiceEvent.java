@@ -1,16 +1,33 @@
 package xyz.sheyar.plugin;
 
-import org.json.JSONArray;
+import android.content.Intent;
+import android.os.Bundle;
+import android.provider.AlarmClock;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by bhanuka on 4/4/17.
  */
 public class SetalarmVoiceEvent extends VoiceAction {
 
+    public SetalarmVoiceEvent(Intent intent) {
+        super(intent);
+    }
+
     @Override
-    public JSONArray transform() {
-        JSONArray a = new JSONArray();
-        a.put("Some");
-        return a;
+    public JSONObject transform() throws JSONException {
+
+        Bundle extras = this.intent.getExtras();
+
+        JSONObject obj = new JSONObject();
+
+        obj.put("type", "SetAlarm");
+        obj.put("hour", extras.getInt(AlarmClock.EXTRA_HOUR));
+        obj.put("minutes", extras.getInt(AlarmClock.EXTRA_MINUTES));
+        // complete others
+        return obj;
+
     }
 }

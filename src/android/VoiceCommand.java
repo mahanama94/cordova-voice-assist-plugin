@@ -1,12 +1,16 @@
 package xyz.sheyar.plugin;
 
+import android.content.Intent;
+import android.util.Log;
+
 import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import javax.security.auth.callback.Callback;
 
 public class VoiceCommand extends CordovaPlugin {
+
+    private static String TAG = "VoiceCommandPlugin";
 
     private CallbackContext callbackContext = null;
 
@@ -15,14 +19,17 @@ public class VoiceCommand extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals("test")) {
+        if (action.equals("check")) {
+
+            Log.d(VoiceCommand.TAG, "Voice Command Plugin Check");
 
             this.callbackContext = callbackContext;
 
             if(voiceAction != null){
                 String message = "Voice action present";
 
-                callbackContext.success(message);
+                callbackContext.success(this.voiceAction.transform());
+
             }
 
             else{
@@ -34,18 +41,19 @@ public class VoiceCommand extends CordovaPlugin {
             return true;
 
         }
+
+
         return false;
 
     }
 
+    public void init(Intent intent) throws JSONException {
 
-    public void init(VoiceAction voiceAction){
-
-        this.voiceAction = voiceAction;
+        this.voiceAction = VoiceActionFactory.getVoiceAction(intent);
 
         if(this.callbackContext != null){
-            String message = " Some message from the voice command";
-            callbackContext.success(message);
+            callbackContext.success(this.voiceAction.transform());
         }
     }
+
 }
