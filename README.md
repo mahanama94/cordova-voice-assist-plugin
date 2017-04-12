@@ -8,6 +8,56 @@ The platform support is currently available only with android.
 
 ## Quick install
 
+`cordova plugin add https://github.com/mahanama94/cordova-voice-command-plugin.git`
+
+## Usage
+
+``` javascript
+
+voicecommand.check(ConfigurationObject, SuccessCallback, ErrorCallback)
+
+```
+
+<br>
+
+| **`ConfigurationObject`**  | `Contains the configuration settings for the voice interactions.`                                           |
+| **`SuccessCallback`**     |  `Callback for the success of finding the application invocation.( For both implicit and explicit calls). With data containing the information of the event`    |
+| **`ErrorCallback`**       | `Callback for the error of the process.`                                                                     |
+
+
+<br><br>
+
+##### ConfigurationObject
+
+| **`remember`** | `The application should remember the type of Application call` | ```true ``` |
+
+<br>
+##### Data
+
+| **`type`** | `Type of the implicit call Ex - SetAlarm (See Documentation)` |
+
+<br>
+
+
 ## Documentation
 
-## Demo
+Link for the complete Documentation of the application.
+
+## Sample Application 
+
+```javascript
+
+function voiceCommandTest(){
+
+  voicecommand.check([], function(message){
+    // receive and handle the event parameters here
+    // for explicit calls,  you can ignore
+    console.log(message)
+  }, function(){
+    console.log('Error');
+  })
+}
+```
+You can attach the above function to an event according to the requirements of the application.
+
+
