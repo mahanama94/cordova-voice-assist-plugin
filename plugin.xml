@@ -73,7 +73,7 @@
     <source-file src="src/android/SettimerVoiceAction.java" target-dir="src/xyz/sheyar/plugin"/>
     <source-file src="src/android/StillImageVoiceAction.java" target-dir="src/xyz/sheyar/plugin"/>
     <source-file src="src/android/VoiceActionFactory.java" target-dir="src/xyz/sheyar/plugin"/>
-    <source-file src="src/android/InAppSearchAction.java" target-dir="src/xyz/sheyar/plugin"/>
+    <source-file src="src/android/InappSearchAction.java" target-dir="src/xyz/sheyar/plugin"/>
   </platform>
 
 </plugin>
