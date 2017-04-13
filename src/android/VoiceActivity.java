@@ -6,7 +6,7 @@ import org.apache.cordova.CordovaActivity;
 import org.json.JSONException;
 
 import android.util.Log;
-import android.widget.Toast;
+
 /**
  * Created by bhanuka on 4/1/17.
  */
@@ -34,9 +34,6 @@ public class VoiceActivity extends CordovaActivity {
             Log.e(TAG, "JSON Exception");
             e.printStackTrace();
         }
-
-        Toast.makeText(this.getApplicationContext(), "Setting info", 2000).show();
-
 
     }
 }

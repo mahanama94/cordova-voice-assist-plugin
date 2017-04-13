@@ -6,6 +6,7 @@ import android.util.Log;
 import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class VoiceCommand extends CordovaPlugin {
@@ -26,16 +27,15 @@ public class VoiceCommand extends CordovaPlugin {
             this.callbackContext = callbackContext;
 
             if(voiceAction != null){
-                String message = "Voice action present";
 
                 callbackContext.success(this.voiceAction.transform());
 
             }
 
             else{
-                String message = "No voice action present";
 
-                callbackContext.success(message);
+                callbackContext.success(this.getDefaultAction());
+
             }
 
             return true;
@@ -51,9 +51,18 @@ public class VoiceCommand extends CordovaPlugin {
 
         this.voiceAction = VoiceActionFactory.getVoiceAction(intent);
 
-        if(this.callbackContext != null){
+        if(this.callbackContext != null && this.voiceAction != null){
             callbackContext.success(this.voiceAction.transform());
         }
+    }
+
+    private JSONObject getDefaultAction() throws JSONException {
+
+        JSONObject obj = new JSONObject();
+
+        obj.put("type", "None");
+
+        return  obj;
     }
 
 }
