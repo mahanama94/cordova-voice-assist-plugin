@@ -37,6 +37,12 @@
             <category android:name="android.intent.category.DEFAULT" />
           </intent-filter>
 
+          <!-- In app search -->
+          <intent-filter>
+              <action android:name="com.google.android.gms.actions.SEARCH_ACTION"/>
+              <category android:name="android.intent.category.DEFAULT"/>
+          </intent-filter>
+
           <intent-filter>
                <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
                <category android:name="android.intent.category.DEFAULT" />
@@ -67,6 +73,7 @@
     <source-file src="src/android/SettimerVoiceAction.java" target-dir="src/xyz/sheyar/plugin"/>
     <source-file src="src/android/StillImageVoiceAction.java" target-dir="src/xyz/sheyar/plugin"/>
     <source-file src="src/android/VoiceActionFactory.java" target-dir="src/xyz/sheyar/plugin"/>
+    <source-file src="src/android/InAppSearchAction.java" target-dir="src/xyz/sheyar/plugin"/>
   </platform>
 
 </plugin>

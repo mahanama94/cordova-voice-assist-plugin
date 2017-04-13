@@ -1,5 +1,6 @@
 package xyz.sheyar.plugin;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.provider.AlarmClock;
 import android.provider.MediaStore;
@@ -19,6 +20,9 @@ public class VoiceActionFactory {
         }
         else if(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA.equals(intent.getAction())){
             return new StillImageVoiceAction(intent);
+        }
+        else if(Intent.ACTION_SEARCH.equals(intent.getAction())){
+            return new InappSearchAction(intent);
         }
         return null;
 
