@@ -6,6 +6,19 @@ The library is a voice command plugin for cordova, supported with cordova and io
 
 The platform support is currently available only with android.
 
+## Supported Actions 
+
+| Action| Remarks|
+| ------------- |-------------|
+|**Set Alarm** | `Supported` |
+|**Set Timer** | `Supported` |
+|**Add calendar event** | `Under development` |  
+|**Take video** | `Under development` |
+|**Take picture** | `Under development` |
+|**Media Play** | `Under development` |
+|**In App Search** | `Under development` |
+
+
 ## Quick install
 
 `cordova plugin add https://github.com/mahanama94/cordova-voice-command-plugin.git`
