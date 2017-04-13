@@ -2,8 +2,8 @@
 
 ### Callback Data 
 
-| Property        | Are           | 
-| ------------- |:-------------:|
+| Property        | Description           | 
+| ------------- |-------------|
 |**```type```** |```SetAlarm```|
 |**```hour```** |```The hour for the alarm``` |
 |**```minutes```** |```The minutes for the alarm```|
