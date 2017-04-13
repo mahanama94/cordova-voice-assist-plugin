@@ -6,17 +6,17 @@ The library is a voice command plugin for cordova, supported with cordova and io
 
 The platform support is currently available only with android.
 
-## Supported Actions 
+## Supported Actions
 
 | Action| Remarks|
 | ------------- |-------------|
 |**Set Alarm** | `Supported` |
 |**Set Timer** | `Supported` |
+|**In App Search** | `Supported` |
 |**Add calendar event** | `Under development` |  
 |**Take video** | `Under development` |
 |**Take picture** | `Under development` |
 |**Media Play** | `Under development` |
-|**In App Search** | `Under development` |
 
 
 ## Quick install
@@ -57,7 +57,7 @@ voicecommand.check(ConfigurationObject, SuccessCallback, ErrorCallback)
 
 Link for the complete Documentation of the plugin can be found in the Docs diectory.
 
-## Sample Application 
+## Sample Application
 
 ```javascript
 
@@ -73,5 +73,3 @@ function voiceCommandTest(){
 }
 ```
 You can attach the above function to an event according to the requirements of the application.
-
-
