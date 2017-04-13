@@ -18,9 +18,9 @@ voicecommand.check(ConfigurationObject, SuccessCallback, ErrorCallback)
 
 ```
 
-<br>
-
-| **`ConfigurationObject`**  | `Contains the configuration settings for the voice interactions.`                                           |
+| Parameter| Description|
+| ------------- |-------------|
+| **`ConfigurationObject`**  | `Contains the configuration settings for the voice interactions.`|
 | **`SuccessCallback`**     |  `Callback for the success of finding the application invocation.( For both implicit and explicit calls). With data containing the information of the event`    |
 | **`ErrorCallback`**       | `Callback for the error of the process.`                                                                     |
 
@@ -29,19 +29,20 @@ voicecommand.check(ConfigurationObject, SuccessCallback, ErrorCallback)
 
 ##### ConfigurationObject
 
+
+| Parameter| Description|Default|
+| ------------- |-------------|------|
 | **`remember`** | `The application should remember the type of Application call` | ```true ``` |
 
-<br>
 ##### Data
 
 | **`type`** | `Type of the implicit call Ex - SetAlarm (See Documentation)` |
 
-<br>
 
 
 ## Documentation
 
-Link for the complete Documentation of the application.
+Link for the complete Documentation of the plugin can be found in the Docs diectory.
 
 ## Sample Application 
 
